@@ -24,7 +24,7 @@ public class Spot {
     @OneToMany(mappedBy = "spot" ,cascade = CascadeType.ALL)
     List<Reservation> reservationList = new ArrayList<>();
 
-    public Spot(Integer pricePerHour) {
+    public Spot() {
     }
 
     public Spot(int id, int pricePerHour, Boolean occupied, SpotType spotType, ParkingLot parkingLot, List<Reservation> reservationList) {
@@ -34,6 +34,9 @@ public class Spot {
         this.spotType = spotType;
         this.parkingLot = parkingLot;
         this.reservationList = reservationList;
+    }
+
+    public Spot(Integer pricePerHour) {
     }
 
     public int getId() {
